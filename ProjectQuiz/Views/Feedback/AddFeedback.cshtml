@@ -1,0 +1,22 @@
+﻿@model Feedback
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Feedback";
+}
+
+
+<h1>Feedback</h1>
+@*Create a form to take user input and create a button to submit the form*@
+<form method="post" asp-action="AddFeedback">
+
+    <div class="mb-3">
+        <label asp-for="rating"></label>
+        <input asp-for="rating" class="form-control" />
+        <label asp-for="content"></label>
+        <input asp-for="content" class="form-control" />
+
+        <p asp-for="userid">@User.FindFirst(ClaimTypes.NameIdentifier).Value</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:150px">Submit</button>
+</form>

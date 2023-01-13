@@ -1,0 +1,27 @@
+﻿@model UserInfo
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Registration</h1>
+@*Create a form to take user input and create a button to submit the form*@
+<form method="post" asp-action="Register">
+
+    <div class="mb-3">
+        <label asp-for="username"></label>
+        <input asp-for="username" class="form-control" />
+        <label asp-for="password"></label>
+        <input asp-for="password" class="form-control" />
+        <label asp-for="firstname"></label>
+        <input asp-for="firstname" class="form-control" />
+        <label asp-for="lastname"></label>
+        <input asp-for="lastname" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:150px">Register</button>
+    @*The <a> tag here is to redirect to the index page*@
+    @*<a asp-controller="User" asp-action="Login" class="btn btn-secondary" style="width: 150px">
+            Back To List
+        </a>*@
+</form>
+
