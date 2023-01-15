@@ -28,6 +28,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/linyi/Desktop/dotNet/Project/ProjectQuiz/ProjectQuiz/Views/Quiz/GetQuiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVpei9HZXRRdWl6LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/linyi/Desktop/dotNet/Project/ProjectQuiz/ProjectQuiz/Views/Quiz/GetResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVpei9HZXRSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/linyi/Desktop/dotNet/Project/ProjectQuiz/ProjectQuiz/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

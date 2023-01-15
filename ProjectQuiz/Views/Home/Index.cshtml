@@ -3,15 +3,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Take A Quiz!</h1>
-    <a asp-controller="Quiz" asp-action="TakeQuiz" asp-route-id="" class="btn btn-secondary" style="width: 150px">
-        C# Quiz
-    </a>
-    <a asp-controller="Quiz" asp-action="TakeQuiz" asp-route-id="" class="btn btn-secondary" style="width: 150px">
-        SQL Quiz
-    </a>
-    <a asp-controller="Quiz" asp-action="TakeQuiz" asp-route-id="" class="btn btn-secondary" style="width: 150px">
-        Python Quiz
-    </a>
+    <h2 class="display-4">Take A Quiz!</h2>
+    @*<a asp-controller="Quiz" asp-action="GetQuiz" asp-route-id="1" class="btn btn-secondary" style="width: 150px">
+            C# Quiz
+        </a>
+        <a asp-controller="Quiz" asp-action="GetQuiz" asp-route-id="3" class="btn btn-secondary" style="width: 150px">
+            SQL Quiz
+        </a>*@
+<form>
+    <input type="button" class="btn btn-primary" style="width:100px" onclick="window.location.href='/Quiz/GetQuiz/1';" value="C#" />
+    <br />
+    <br />
+    <input type="button" class="btn btn-primary" style="width:100px" onclick="window.location.href='/Quiz/GetQuiz/3';" value="SQL" />
+    <br />
+    <br />
+    <input type="button" class="btn btn-primary" style="width:100px" onclick="window.location.href='/Quiz/GetQuiz/4';" value="Python" />
+</form>
 </div>
 

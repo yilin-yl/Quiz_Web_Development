@@ -19,6 +19,7 @@ public class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddTransient<UserDAO>();
         builder.Services.AddTransient<FeedbackDAO>();
+        builder.Services.AddTransient<QuizDAO>();
 
         var app = builder.Build();
 

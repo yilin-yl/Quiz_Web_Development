@@ -11,7 +11,7 @@
     "ProjectQuiz": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7288;http://localhost:5080",
+      "applicationUrl": "https://localhost:7444;http://localhost:5333",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

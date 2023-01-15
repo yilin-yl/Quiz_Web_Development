@@ -14,8 +14,6 @@
         <input asp-for="rating" class="form-control" />
         <label asp-for="content"></label>
         <input asp-for="content" class="form-control" />
-
-        <p asp-for="userid">@User.FindFirst(ClaimTypes.NameIdentifier).Value</p>
     </div>
 
     <button type="submit" class="btn btn-primary" style="width:150px">Submit</button>

@@ -12,11 +12,15 @@
     <None Remove="System.Data.SqlClient" />
     <None Remove="Views\Feedback\" />
     <None Remove="Microsoft.AspNetCore.Identity" />
+    <None Remove="DTO\" />
+    <None Remove="Views\Quiz\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\User\" />
     <Folder Include="DAO\" />
     <Folder Include="Views\Feedback\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Views\Quiz\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />

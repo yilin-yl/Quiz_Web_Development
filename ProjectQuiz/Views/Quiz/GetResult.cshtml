@@ -1,0 +1,84 @@
+﻿@using ProjectQuiz.DTO;
+@model Result;
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<div class="text-center">
+    <h2>Result</h2>
+</div>
+
+<h6>Thanks for taking the quiz, @Model.firstname @Model.lastname</h6>
+
+<h6>Quiz Name: @Model.quizname</h6>
+<h6>Start time: @Model.starttime.ToString() </h6>
+<h6>End time: @Model.endtime.ToString() </h6>
+<h6>Your score is @Model.score out of 10</h6>
+
+@if (Model.score >= 6)
+{
+    <h5>Congratulations! You passed the quiz!</h5>
+}
+else
+{
+    <h5>Sorry, you didn't pass the quiz</h5>
+}
+
+<h5>Quiz Details:</h5>
+
+<div>
+    @for (var i = 0; i < 10; i++)
+    {
+        QuestionSubmission item = Model.question_submissions[i];
+
+        <h6>Question @item.no</h6>
+
+        <p>@item.question.content</p>
+        @if (item.selected_oid == item.option1.id)
+        {
+            <input type="radio" checked="checked">@item.option1.value<br />
+            <input type="radio" disabled>@item.option2.value<br />
+            <input type="radio" disabled>@item.option3.value<br />
+        }
+        else if (item.selected_oid == item.option2.id)
+        {
+            <input type="radio" disabled>@item.option1.value<br />
+            <input type="radio" checked="checked">@item.option2.value<br />
+            <input type="radio" disabled>@item.option3.value<br />
+        }
+        else if (item.selected_oid == item.option3.id)
+        {
+            <input type="radio" disabled>@item.option1.value<br />
+            <input type="radio" disabled>@item.option2.value<br />
+            <input type="radio" checked="checked">@item.option3.value<br />
+
+        }
+        else
+        {
+            <input type="radio" disabled>@item.option1.value<br />
+            <input type="radio" disabled>@item.option2.value<br />
+            <input type="radio" disabled>@item.option3.value<br />
+        }
+
+        @if (item.iscorrect == 1)
+        {
+            <p style="color:green;"> Correct </p>
+
+        }
+        else
+        {
+            var correct_option = new Option();
+            if (item.option1.iscorrect == 1) { correct_option = item.option1; }
+            else if (item.option2.iscorrect == 2) { correct_option = item.option2; }
+            else { correct_option = item.option3; }
+            <p style="color:red;"> Wrong </p>
+            <p style="color:red;"> Correct Answer: @correct_option.value</p>
+        }
+
+        <br>
+    }
+
+</div>
+
+<a class="btn btn-link" asp-controller="Home" asp-action="Index">Back to Home</a>

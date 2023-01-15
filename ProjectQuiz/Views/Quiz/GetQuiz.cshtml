@@ -1,0 +1,39 @@
+﻿@using ProjectQuiz.DTO;
+@model Exam;
+
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+
+<html>
+<body>
+
+    <form method="post" asp-action="GetQuiz">
+        @for (var i = 0; i < Model.fullQuestion.Count; i++)
+        {
+            @Html.HiddenFor(model => model.fullQuestion[i].quizid)
+            @Html.HiddenFor(model => model.fullQuestion[i].question.id)
+            @Html.HiddenFor(model => model.fullQuestion[i].no)
+
+            FullQuestion item = Model.fullQuestion[i];
+
+            <h5>Question @item.no</h5> 
+
+            <p>@item.question.content</p>
+
+            <select asp-for="fullQuestion[i].selected_oid" class="form-control">
+                <option value="">--Please choose an option--</option>
+                <option value=@item.option1.id>@item.option1.value</option>
+                <option value=@item.option2.id>@item.option2.value</option>
+                <option value=@item.option3.id>@item.option3.value</option>
+            </select>
+
+            <br><br>
+        }
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Submit</button>
+    </form>
+
+</body>
+</html>
