@@ -62,6 +62,14 @@ namespace ProjectQuiz.Controllers
             _userdao.AddUser(user);
             return RedirectToAction("Login"); 
         }
+
+        //Logout
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("Login");
+            return Redirect("/User/Login");
+        }
     }
 }
 

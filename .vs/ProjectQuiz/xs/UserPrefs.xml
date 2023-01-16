@@ -1,34 +1,42 @@
 ﻿<Properties StartupConfiguration="{1AAE53B4-F644-44F7-A60E-B320D6747ED8}|Default">
-  <MonoDevelop.Ide.ItemProperties.ProjectQuiz PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectQuiz/Program.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectQuiz/Controllers/QuizController.cs">
     <Files>
-      <File FileName="ProjectQuiz/DAO/QuizDAO.cs" Line="1" Column="1" />
-      <File FileName="ProjectQuiz/Views/Quiz/GetQuiz.cshtml" Line="7" Column="1" />
-      <File FileName="ProjectQuiz/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
-      <File FileName="ProjectQuiz/Controllers/QuizController.cs" Line="31" Column="32" />
-      <File FileName="ProjectQuiz/Views/Home/Index.cshtml" Line="14" Column="20" NotebookId="1" />
-      <File FileName="ProjectQuiz/Controllers/FeedbackController.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="ProjectQuiz/Program.cs" Line="46" Column="1" NotebookId="1" />
+      <File FileName="ProjectQuiz/DAO/QuizDAO.cs" Line="92" Column="54" />
+      <File FileName="ProjectQuiz/Controllers/QuizController.cs" Line="14" Column="5" />
+      <File FileName="ProjectQuiz/Views/Quiz/GetQuiz.cshtml" />
+      <File FileName="ProjectQuiz/Views/Quiz/GetResult.cshtml" />
+      <File FileName="ProjectQuiz/Models/Quiz_Question.cs" />
+      <File FileName="ProjectQuiz/DTO/Exam.cs" />
+      <File FileName="ProjectQuiz/Controllers/ContactController.cs" />
+      <File FileName="ProjectQuiz/Views/Contact/Index.cshtml" Line="12" Column="7" />
+      <File FileName="ProjectQuiz/Views/Home/Index.cshtml" NotebookId="1" />
+      <File FileName="ProjectQuiz/Program.cs" NotebookId="1" />
+      <File FileName="ProjectQuiz/Properties/launchSettings.json" NotebookId="1" />
+      <File FileName="ProjectQuiz/DTO/QuestionSubmission.cs" Line="13" Column="20" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProjectQuiz" expanded="True">
             <Node name="ProjectQuiz" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="QuizController.cs" selected="True" />
+              </Node>
               <Node name="DAO" expanded="True" />
               <Node name="DTO" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Feedback" expanded="True" />
+                <Node name="Contact" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Quiz" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="User" expanded="True" />
               </Node>
               <Node name="appsettings.json" expanded="True" />
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -36,9 +44,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ProjectQuiz PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
 </Properties>

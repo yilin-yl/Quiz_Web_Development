@@ -83,13 +83,13 @@ namespace ProjectQuiz.DAO
         //update QuizSubmission table based on quizid -> endtime
         public int UpdateSubmission(DateTime endtime, int quizid)
         {
-            string query_insert = "UPDATE QuizSubmission SET endtime = @endtime WHERE quizid = @quizid";
+            string query_update = "UPDATE QuizSubmission SET endtime = @endtime WHERE quizid = @quizid";
             int rowaffected;
 
             using (var conn = new SqlConnection(_configuration.GetConnectionString("default")))
             {
                 conn.Open();
-                var cmd = new SqlCommand(query_insert, conn);
+                var cmd = new SqlCommand(query_update, conn);
                 cmd.Parameters.AddWithValue("@endtime", endtime);
                 cmd.Parameters.AddWithValue("@quizid", quizid);
                 rowaffected = cmd.ExecuteNonQuery();
@@ -117,7 +117,7 @@ namespace ProjectQuiz.DAO
         }
 
 
-        //get a list of question & options (answer) objects 
+        //get a list of question & options objects 
         public List<FullQuestion> GetQuiz(int categoryid)
         {
             string query = "SELECT q.*, o.* FROM Question q JOIN Options o ON q.id=o.questionid WHERE q.categoryid=@categoryid";
@@ -206,8 +206,7 @@ namespace ProjectQuiz.DAO
                             res.Add(fq);
                             i++;
                         }
-                           
-                            
+     
                     }
                 }
             }
