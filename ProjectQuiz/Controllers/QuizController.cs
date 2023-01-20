@@ -75,6 +75,7 @@ namespace ProjectQuiz.Controllers
             return RedirectToAction("GetResult", new { quizid = quizid });
         }
 
+        //Session httpcontext to record the information
 
         // show result 
         [HttpGet]

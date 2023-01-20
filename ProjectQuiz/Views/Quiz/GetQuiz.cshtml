@@ -18,7 +18,7 @@
 
             FullQuestion item = Model.fullQuestion[i];
 
-            <h5>Question @item.no</h5> 
+            <h5>Question @item.no</h5>
 
             <p>@item.question.content</p>
 
@@ -34,6 +34,17 @@
 
         <button type="submit" class="btn btn-primary" style="width:150px">Submit</button>
     </form>
+    @*
+        <script type="text/javascript">function Confirm() {
+                var input = $("<input />");
+                input.attr("type", "hidden").attr("name", "confirm_value");
+                if (confirm("Do you want to save data?")) {
+                    input.val("Yes");
+                } else {
+                    input.val("No");
+                }
+                $("form")[0].appendChild(input[0]);
+            }</script>*@
 
 </body>
 </html>

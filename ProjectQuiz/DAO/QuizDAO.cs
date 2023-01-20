@@ -29,7 +29,6 @@ namespace ProjectQuiz.DAO
                 quizid = Convert.ToInt32(cmd.ExecuteScalar());
             }
             return quizid;  
-
         }
 
         //insert into Quiz_Question table
