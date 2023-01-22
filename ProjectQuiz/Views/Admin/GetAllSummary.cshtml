@@ -1,0 +1,49 @@
+﻿@using ProjectQuiz.DTO;
+@model List<AdminResultSummary>;
+
+@{
+    ViewData["Title"] = "Admin Summary";
+}
+
+<div class="row pt-4">
+    <div class="col-6">
+        <h2>Quiz Submissions</h2>
+    </div>
+</div>
+
+<div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show All</button>
+    <button class="btn" onclick="filterSelection('C#')"> C#</button>
+    <button class="btn" onclick="filterSelection('SQL')"> SQL</button>
+    <button class="btn" onclick="filterSelection('Python')"> Python</button>
+</div>
+
+
+<table cellspacing="3" cellpadding="10" class=" table table-bordered table-striped">
+    <tr>
+        <th>Quiz Category</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>User First Name</th>
+        <th>User Last Name</th>
+        <th>Completion</th>
+        <th>Score</th>
+        <th>Detail</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.categoryname</td>
+            <td>@item.starttime</td>
+            <td>@item.endtime</td>
+            <td>@item.firstname</td>
+            <td>@item.lastname</td>
+            <td>@item.completion / 10</td>
+            <td>@item.score</td>
+            <td><a class="btn btn-link" asp-controller="Admin" asp-action="GetDetailByQuizId" asp-route-quizid=@item.quizid>Detail</a></td>
+        </tr>
+
+
+    }
+</table>

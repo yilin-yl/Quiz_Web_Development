@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Admin</h2>
+    <a asp-controller="Admin" asp-action="GetAllSummary" class="btn btn-secondary" style="width: 150px">
+        Quiz Results
+    </a>
+    <a asp-controller="Admin" asp-action="GetAllUser" class="btn btn-secondary" style="width: 150px">
+        User Profiles
+    </a>
+    <a asp-controller="Admin" asp-action="GetAllQuestion" class="btn btn-secondary" style="width: 150px">
+        Questions
+    </a>
+</div>

@@ -1,4 +1,6 @@
 ﻿using ProjectQuiz.DAO;
+using ProjectQuiz.Data;
+using ProjectQuiz.Services;
 
 namespace ProjectQuiz;
 
@@ -17,9 +19,12 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddDbContext<AdminContext>();
         builder.Services.AddTransient<UserDAO>();
         builder.Services.AddTransient<FeedbackDAO>();
         builder.Services.AddTransient<QuizDAO>();
+        builder.Services.AddTransient<AdminDAO>();
+        builder.Services.AddTransient<AdminService>();
 
         var app = builder.Build();
 

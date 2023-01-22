@@ -1,0 +1,59 @@
+﻿@using ProjectQuiz.DBEntities;
+@model ProjectQuiz.DBEntities.Question;
+
+@{
+    ViewData["Title"] = "Update Question";
+}
+
+<h2>Update Question</h2>
+
+<form method="post" asp-action="UpdateQuestion">
+    @Html.HiddenFor(model => model.id)
+
+    <div class="mb-3">
+        <div class="mb-3">
+            <label asp-for="content">Question</label>
+            <input asp-for="content" class="form-control" />
+        </div>
+
+        <div style="display: flex;" space-aroundclass="mb-3">
+            <p>
+                <label asp-for="options[0].value">Option</label>
+                <input asp-for="options[0].value" class="form-control" style='width:20em' />
+            </p>
+            <p>
+                <label asp-for="options[0].iscorrect">Correctness</label>
+                <input asp-for="options[0].iscorrect" class="form-control" style='width:5em' />
+            </p>
+        </div>
+        <div style="display: flex;" space-aroundclass="mb-3">
+            <p>
+                <label asp-for="options[1].value">Option</label>
+                <input asp-for="options[1].value" class="form-control" style='width:20em' />
+            </p>
+            <p>
+                <label asp-for="options[1].iscorrect">Correctness</label>
+                <input asp-for="options[1].iscorrect" class="form-control" style='width:5em' />
+            </p>
+        </div>
+        <div style="display: flex;" space-aroundclass="mb-3">
+            <p>
+                <label asp-for="options[2].value">Option</label>
+                <input asp-for="options[2].value" class="form-control" style='width:20em' />
+            </p>
+            <p>
+                <label asp-for="options[2].iscorrect">Correctness</label>
+                <input asp-for="options[2].iscorrect" class="form-control" style='width:5em' />
+            </p>
+        </div>
+
+
+
+    </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+
+        <a asp-controller="Admin" asp-action="GetAllQuestion" class="btn btn-secondary" style="width: 200px">
+            Back To Question List
+        </a>
+</form>

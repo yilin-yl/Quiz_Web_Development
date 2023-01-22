@@ -48,7 +48,7 @@ namespace ProjectQuiz.DAO
         //Add a user (register)
         public void AddUser(UserInfo user)
         {
-            string insert_query = "INSERT INTO UserInfo VALUES (@username, @password, @firstname, @lastname)";
+            string insert_query = "INSERT INTO UserInfo VALUES (@username, @password, @firstname, @lastname, @status, @address, @email)";
             using (var conn = new SqlConnection(_configuration.GetConnectionString("default")))
             {
                 conn.Open();
@@ -57,6 +57,9 @@ namespace ProjectQuiz.DAO
                 cmd.Parameters.AddWithValue("@password", user.password);
                 cmd.Parameters.AddWithValue("@firstname", user.firstname);
                 cmd.Parameters.AddWithValue("@lastname", user.lastname);
+                cmd.Parameters.AddWithValue("@status", 1);
+                cmd.Parameters.AddWithValue("@address", user.address);
+                cmd.Parameters.AddWithValue("@firstname", user.email);
                 cmd.ExecuteNonQuery();
             }
         }

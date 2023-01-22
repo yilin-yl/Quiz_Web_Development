@@ -1,0 +1,49 @@
+﻿@using ProjectQuiz.DTO;
+@using ProjectQuiz.DBEntities;
+@model List<ProjectQuiz.DBEntities.UserInfo>;
+
+@{
+    ViewData["Title"] = "Admin Profiles";
+}
+
+<div class="row pt-4">
+    <div class="col-6">
+        <h2>User Profiles</h2>
+    </div>
+</div>
+<table cellspacing="3" cellpadding="10" class=" table table-bordered table-striped">
+    <tr>
+        <th>User First Name</th>
+        <th>User Last Name</th>
+        <th>Primary Address</th>
+        <th>Primary Email</th>
+        <th>Status</th>
+        <th>Activate/Suspend</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.firstname</td>
+            <td>@item.lastname</td>
+            <td>@item.address</td>
+            <td>@item.email</td>
+
+            @if (item.status == 0)
+            {
+                <td>Suspended</td>
+                <td><a class="btn btn-link" asp-controller="Admin" asp-action="UpdateStatus" asp-route-userid="@item.id">ACTIVATE</a></td>
+            }
+            else
+            {
+                <td>Active</td>
+                <td><a class="btn btn-link" asp-controller="Admin" asp-action="UpdateStatus" asp-route-userid="@item.id">SUSPEND</a></td>
+            }
+
+        </tr>
+
+    }
+</table>
+
+
+

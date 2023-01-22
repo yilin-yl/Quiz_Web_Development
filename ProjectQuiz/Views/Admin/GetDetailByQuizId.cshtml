@@ -1,0 +1,45 @@
+﻿@using ProjectQuiz.DTO;
+@using ProjectQuiz.DBEntities;
+@model List<AdminDetail>;
+
+@{
+    ViewData["Title"] = "Submission Detail";
+}
+
+
+<h5>Quiz Detail</h5>
+@foreach (var item in Model)
+{
+    <h6>Question @item.no</h6>
+    <p>@item.question.content</p>
+    var correct_option = new ProjectQuiz.DBEntities.Option();
+    foreach (var o in item.options)
+    {
+        
+        if (o.iscorrect == 1) { correct_option = o; }
+        if (item.selected_oid == o.id)
+        {
+            <input type="radio" checked="checked">
+            @o.value
+            <br />
+        }
+        else
+        {
+            <input type="radio" disabled>
+            @o.value
+            <br />
+        }
+    }
+
+    if (item.iscorrect == 1)
+    {
+        <p style="color:green;"> Correct </p>
+    }
+    else
+    {
+        <p style="color:red;"> Correct Answer: @correct_option.value</p>
+    }
+
+
+
+}

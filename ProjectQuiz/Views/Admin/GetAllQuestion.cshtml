@@ -1,0 +1,70 @@
+﻿@using ProjectQuiz.DTO;
+@using ProjectQuiz.DBEntities;
+@model List<ProjectQuiz.DBEntities.Question>;
+
+@{
+    ViewData["Title"] = "Admin Question";
+}
+
+@{ var category_dict = new Dictionary<int, string>()
+            {
+                {1,"C#"},
+                {3,"SQL"},
+                {4,"Python"}
+            };
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2>Question List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Admin" asp-action="CreateQuestion" class="btn btn-primary">
+                Create a new question
+            </a>
+        </div>
+    </div>
+</div>
+<table class=" table table-bordered table-striped" style="width：100%">
+    <thead>
+        <tr>
+            <th>
+                Category
+            </th>
+            <th>
+                Question
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @category_dict[item.categoryid]
+                </td>
+                <td>
+                    @item.content
+                </td>
+                <td>
+                    @item.options[0].value
+                    <br />
+                    @item.options[1].value
+                    <br />
+                    @item.options[2].value
+                </td>
+                
+                <td width="20%">
+                    <div>
+                        <a asp-controller="Admin" asp-action="UpdateQuestion" asp-route-qid="@item.id">Edit</a>
+                    </div>
+                
+            </tr>
+
+        }
+    </tbody>
+</table>
