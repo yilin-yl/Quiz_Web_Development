@@ -119,7 +119,7 @@ namespace ProjectQuiz.DAO
         //get a list of question & options objects 
         public List<FullQuestion> GetQuiz(int categoryid)
         {
-            string query = "SELECT q.*, o.* FROM Question q JOIN Options o ON q.id=o.questionid WHERE q.categoryid=@categoryid";
+            string query = "SELECT q.*, o.* FROM Question q JOIN Options o ON q.id=o.questionid WHERE q.categoryid=@categoryid AND q.status=1";
             //var all_question = new List<Question>();
             var dict = new Dictionary<int,List<Option>>();
             var all_qid = new HashSet<int>(); //get a set of all question id -> for random select
@@ -179,7 +179,7 @@ namespace ProjectQuiz.DAO
             }
 
             int i = 1; //question no.
-            string query_allq = "SELECT * FROM Question";
+            string query_allq = "SELECT * FROM Question WHERE status=1";
             using (var conn = new SqlConnection(_configuration.GetConnectionString("default")))
             {
                 conn.Open();

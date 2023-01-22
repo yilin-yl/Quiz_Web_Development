@@ -10,6 +10,7 @@ namespace ProjectQuiz.Models
         public int id { get; set; }
         public string content { get; set; }
         public int categoryid { get; set; }
+        public int status { get; set; }
 
     }
 

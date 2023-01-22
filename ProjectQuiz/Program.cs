@@ -16,6 +16,11 @@ public class Program
             options.LoginPath = "/User/Login";
             options.AccessDeniedPath = "/User/Denied";
         });
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("AdminOnly", policy => policy.RequireClaim("Role","Admin"));
+            options.AddPolicy("ActiveUserOnly", policy => policy.RequireClaim("Status", "Active"));
+        });
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();

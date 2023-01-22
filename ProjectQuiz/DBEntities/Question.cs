@@ -15,6 +15,7 @@ namespace ProjectQuiz.DBEntities
         public int id { get; set; }
         public string content { get; set; }
         public int categoryid { get; set; }
+        public int status { get; set; }
 
         [InverseProperty("Question")]
         public virtual List<Option> options { get; set; }

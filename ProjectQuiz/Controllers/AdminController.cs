@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using ProjectQuiz.DAO;
 using ProjectQuiz.Services;
 using ProjectQuiz.DBEntities;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ProjectQuiz.Controllers
 {
+    [Authorize(Policy = "AdminOnly")]
     public class AdminController : Controller
     {
         private readonly AdminDAO _adminDAO;
@@ -50,6 +52,7 @@ namespace ProjectQuiz.Controllers
             return View(res);
         }
 
+        // activate/suspend user 
         [HttpGet]
         public IActionResult UpdateStatus(int userid)
         {
@@ -95,6 +98,14 @@ namespace ProjectQuiz.Controllers
         {
             _adminDAO.CreateQuestion(question);
             return RedirectToAction("GetAllQuestion"); ;
+        }
+
+        // change question status
+        [HttpGet]
+        public IActionResult UpdateQuestionStatus(int id)
+        {
+            _adminDAO.UpdateQuestionStatus(id);
+            return RedirectToAction("GetAllQuestion");
         }
     }
 }

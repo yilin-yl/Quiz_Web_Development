@@ -11,7 +11,7 @@ using ProjectQuiz.Models;
 
 namespace ProjectQuiz.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "ActiveUserOnly")]
     public class QuizController : Controller
     {
         private readonly QuizDAO _quizdao;

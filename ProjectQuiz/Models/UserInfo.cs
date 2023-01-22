@@ -11,6 +11,7 @@ namespace ProjectQuiz.Models
         public int status { get; set; }
         public string? address { get; set; }
         public string? email { get; set; }
+        public int admin { get; set; }
     }
 }
 

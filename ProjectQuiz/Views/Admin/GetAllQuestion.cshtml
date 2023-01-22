@@ -38,6 +38,12 @@
             <th>
                 Options
             </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Status
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -57,13 +63,27 @@
                     <br />
                     @item.options[2].value
                 </td>
-                
+
                 <td width="20%">
                     <div>
                         <a asp-controller="Admin" asp-action="UpdateQuestion" asp-route-qid="@item.id">Edit</a>
                     </div>
-                
-            </tr>
+                </td>
+                @if (item.status == 0)
+                {
+                    <td>
+                        Suspended <br />
+                    <a class="btn btn-link" asp-controller="Admin" asp-action="UpdateQuestionStatus" asp-route-id="@item.id">ACTIVATE</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        Active <br />
+                    <a class="btn btn-link" asp-controller="Admin" asp-action="UpdateQuestionStatus" asp-route-id="@item.id">SUSPEND</a>
+                    </td>
+                }
+                </tr>
 
         }
     </tbody>

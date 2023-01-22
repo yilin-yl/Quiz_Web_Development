@@ -19,12 +19,20 @@ namespace ProjectQuiz.Controllers
             _userdao = userdao;
         }
 
+        //Access denied
+        [HttpGet]
+        public IActionResult Denied()
+        {
+            return View();
+        }
+
         //Login
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(string username, string password)
         {
@@ -33,11 +41,13 @@ namespace ProjectQuiz.Controllers
             if (user != null && password == user.password)
             {
                 var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.NameIdentifier, user.id.ToString())
+                {
+                    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.NameIdentifier, user.id.ToString())
+                };
+                if (user.admin == 1) { claims.Add(new Claim("Role","Admin")); }
+                if (user.status == 1) { claims.Add(new Claim("Status", "Active")); }
 
-            };
                 var identity = new ClaimsIdentity(claims, "Login");
                 ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 

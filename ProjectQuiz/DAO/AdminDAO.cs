@@ -125,6 +125,18 @@ namespace ProjectQuiz.DAO
             }
 			
 		}
-	}
+
+        //update question status
+        public void UpdateQuestionStatus(int id)
+        {
+            var q_res = _dbContext.Questions.SingleOrDefault(q => q.id == id);
+            if (q_res != null)
+            {
+				int old_status = q_res.status;
+                q_res.status = 1 - old_status;
+                _dbContext.SaveChanges();
+            }
+        }
+    }
 }
 
