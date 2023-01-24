@@ -54,12 +54,12 @@ namespace ProjectQuiz.Controllers
         {
             var quizid = exam.fullQuestion[0].quizid;
             var endtime = DateTime.Now;
-            
+            var test = exam.fullQuestion[0].selected_oid;
+            var test2 = exam.fullQuestion[1].selected_oid;
+
             foreach (var item in exam.fullQuestion)
             {
                 var qq = new Quiz_Question();
-
-                var test = item.no;
 
                 qq.quizid = quizid;
                 qq.questionid = item.question.id;

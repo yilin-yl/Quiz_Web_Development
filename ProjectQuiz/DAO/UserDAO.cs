@@ -39,6 +39,7 @@ namespace ProjectQuiz.DAO
                         res.firstname = Convert.ToString(reader["firstname"]);
                         res.lastname = Convert.ToString(reader["lastname"]);
                         res.admin = Convert.ToInt32(reader["admin"]);
+                        res.status = Convert.ToInt32(reader["status"]);
                         break;
                     }
                 }

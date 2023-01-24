@@ -4,7 +4,7 @@ namespace ProjectQuiz.DTO
 	public class AdminResultSummary
 	{
         public int quizid { get; set; }
-        public int userid { get; set; }
+        public string username { get; set; }
         public DateTime starttime { get; set; }
         public DateTime? endtime { get; set; }
         public int? score { get; set; }

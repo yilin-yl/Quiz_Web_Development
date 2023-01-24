@@ -30,9 +30,15 @@ namespace ProjectQuiz.Controllers
         }
 
         [HttpGet("admin/result")]
-        public ActionResult GetAllSummary()
+        public ActionResult GetAllSummary(string categoryname,string username)
         {
-            var res = _adminService.GetAllSummary();
+            var res = _adminService.GetAllSummary()
+                .Where(x => x.categoryname==categoryname || categoryname == null || categoryname == "All" )
+                .Where(x => x.username == username || username == null || username == "All")
+                .ToList();
+            ViewBag.Category = new List<string>(){"All","C#","SQL","Python"};
+            ViewBag.Username = _adminDAO.GetAllUser().Select(x => x.username).ToList();
+            ViewBag.Username.Insert(0, "All");
             return View(res);
         }
 

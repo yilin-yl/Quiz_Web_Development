@@ -9,7 +9,10 @@ namespace ProjectQuiz.DTO
         [BindProperty]
         public List<FullQuestion> fullQuestion { get; set; }
 
-        //public DateTime starttime { get; set; }
+        //public int CurrentPageIndex { get; set; }
+
+        //public int PageCount { get; set; }
+
     }
 }
 

@@ -149,7 +149,7 @@ namespace ProjectQuiz.DAO
                             int qid = Convert.ToInt32(reader[0]);
                             Option o = new Option()
                             {
-                                id = Convert.ToInt32(reader[3]),
+                                id = Convert.ToInt32(reader[4]), //same column name in q&o table (notice when alter question table)!
                                 value = Convert.ToString(reader["value"]),
                                 iscorrect = Convert.ToInt32(reader["iscorrect"]),
                                 questionid = Convert.ToInt32(reader["questionid"])

@@ -49,7 +49,7 @@ namespace ProjectQuiz.Services
                 record.categoryname = dict_q_cat[dict_quiz_q[quizid][0].questionid];
 				record.starttime = item.starttime;
 				record.endtime = item.endtime;
-				record.userid = item.userid;
+				record.username = item.user.username;
 				record.firstname = item.user.firstname;
 				record.lastname = item.user.lastname;
 				record.score = item.score;

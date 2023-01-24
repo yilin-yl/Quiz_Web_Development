@@ -22,6 +22,8 @@
     <None Remove="Views\Admin\" />
     <None Remove="DBEntities\" />
     <None Remove="Services\" />
+    <None Remove="PagedList.Mvc" />
+    <None Remove="X.PagedList" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\User\" />
@@ -44,5 +46,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="X.PagedList" Version="8.4.3" />
   </ItemGroup>
 </Project>
